@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import LikeButton from './components/LikeButton';
 
 function App() {
+  const [likes, updateLikes] = useState(23);
+  const [liked, updateLiked] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LikeButton 
+    secret='like-button'
+    numLikes={likes}
+    // status={liked}
+    onSelect={(liked) => {
+      if (liked) {
+        updateLikes(likes + 1);
+       } else { updateLikes(likes - 1)
+       };
+      updateLiked(!liked);
+      }
+    }
+    />
+    // onClick function here, or in LikeButton.js?
   );
 }
 
