@@ -10,8 +10,10 @@ function App() {
     <LikeButton 
     secret='like-button'
     numLikes={likes}
+    liked={liked}
     // status={liked}
-    onSelect={(liked) => {
+    onSelect={function clickLike(liked) { //This function is happening, but the else block
+      // never fires.
       if (liked) {
         updateLikes(likes + 1);
        } else { updateLikes(likes - 1)
