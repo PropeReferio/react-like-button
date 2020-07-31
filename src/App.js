@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="card">
-      <img src={reactpic} />
+      <img src={reactpic} alt='Sites built with React'/>
       <LikeButton 
       numLikes={likes}
       liked={liked}
