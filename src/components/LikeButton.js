@@ -5,7 +5,7 @@ export default function LikeButton({liked, numLikes, onSelect}) {
     return (
       <>
         
-    <button liked={liked} onClick={() => onSelect(liked)}>Like Button {<FaThumbsUp />}</button>
+    <button liked={liked} onClick={() => onSelect(liked)}>{liked ? "Unlike" : "Like"}{<FaThumbsUp />}</button>
         <p>Likes: {numLikes}</p>
       </>
     );
