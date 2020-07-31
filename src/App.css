@@ -1,3 +1,36 @@
 div {
   margin: 10px;
 }
+body {
+  background-color: black;
+}
+.card {
+  background-color: grey;
+  width: 30%;
+  height: 40%;
+  border-radius: 4px;
+  padding: 0.4em;
+}
+img {
+  width: 100%;
+}
+/* .fake-picture {
+  background-color: white;
+  text-align: right;
+  height: 30em;
+} */
+button {
+  margin: 1em 1em 0em 43em;
+  width: 7em;
+}
+p {
+  font-size: 0.76em;
+  padding: 0em 1em 1em 0em;
+  text-align: right;
+}
+.liked {
+  background-color: rgb(151, 248, 255);
+}
+.unliked {
+  background-color: royalblue;
+}
