@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+div {
+  margin: 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  background-color: grey;
+  width: 30%;
+  height: 40%;
+  border-radius: 4px;
+  padding: 0.4em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+  width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+/* .fake-picture {
+  background-color: white;
+  text-align: right;
+  height: 30em;
+} */
+button {
+  margin: 1em 1em 0em 43em;
+  width: 7em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 0.76em;
+  padding: 0em 1em 1em 0em;
+  text-align: right;
+}
+.liked {
+  background-color: rgb(151, 248, 255);
+}
+.unliked {
+  background-color: royalblue;
 }

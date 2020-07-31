@@ -1,12 +1,16 @@
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 
-export default function LikeButton({secret, numLikes, onSelect}) {
+export default function LikeButton({liked, numLikes, onSelect}) {
     return (
       <>
-        <FaThumbsUp />
-        <div key={secret} onClick={onSelect}>Like Button</div>
-        <p>{numLikes}</p>
+        <button className={`button ${liked ? 'liked' : 'unliked'}`} // Change styles 
+          liked={liked} // based on liked or unliked
+          onClick={
+            () => onSelect(liked)}>
+              {liked ? "Unlike" : "Like"}  {<FaThumbsUp />}
+        </button>
+            <p>Alex Johnson, Spencer Partridge and {numLikes} others liked this</p>
       </>
     );
 }

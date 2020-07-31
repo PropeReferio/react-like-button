@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import './App.css';
 import LikeButton from './components/LikeButton';
+import reactpic from './react-pic.png';
 
 function App() {
   const [likes, updateLikes] = useState(23);
-  const [liked, updateLiked] = useState(false);
+  const [liked, updateLiked] = useReducer(liked => !liked, false);
+
+  useEffect(() => {
+    updateLikes(likes => likes + (liked ? 1 : -1));
+  }, [liked]);
 
   return (
-    <LikeButton 
-    secret='like-button'
-    numLikes={likes}
-    // status={liked}
-    onSelect={(liked) => {
-      if (liked) {
-        updateLikes(likes + 1);
-       } else { updateLikes(likes - 1)
-       };
-      updateLiked(!liked);
-      }
-    }
-    />
-    // onClick function here, or in LikeButton.js?
+    <div className="card">
+      <img src={reactpic} alt='Sites built with React'/>
+      <LikeButton 
+      numLikes={likes}
+      liked={liked}
+      onSelect={updateLiked}
+      />
+    </div>
   );
 }
 
