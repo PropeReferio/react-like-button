@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 
-export default function LikeButton({secret, liked, numLikes, onSelect}) {
+export default function LikeButton({liked, numLikes, onSelect}) {
     return (
       <>
-        <FaThumbsUp />
-        <div key={secret} liked={liked} onClick={onSelect(liked)}>Like Button</div>
-        <p>{numLikes}</p>
+        
+    <button liked={liked} onClick={() => onSelect(liked)}>Like Button {<FaThumbsUp />}</button>
+        <p>Likes: {numLikes}</p>
       </>
     );
 }

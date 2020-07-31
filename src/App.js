@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import LikeButton from './components/LikeButton';
 
@@ -6,23 +6,19 @@ function App() {
   const [likes, updateLikes] = useState(23);
   const [liked, updateLiked] = useState(false);
 
+  useEffect(() => {
+    updateLikes(likes => likes + (liked ? 1 : -1));
+  }, [liked]);
+
   return (
     <LikeButton 
-    secret='like-button'
     numLikes={likes}
     liked={liked}
-    // status={liked}
-    onSelect={function clickLike(liked) { //This function is happening, but the else block
-      // never fires.
-      if (liked) {
-        updateLikes(likes + 1);
-       } else { updateLikes(likes - 1)
-       };
-      updateLiked(!liked);
+    onSelect={function clickLike(liked) {
+      updateLiked(liked => !liked);
       }
     }
     />
-    // onClick function here, or in LikeButton.js?
   );
 }
 
